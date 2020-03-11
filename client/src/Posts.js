@@ -22,8 +22,8 @@ class Posts extends Component {
         <Row>
           {this.state.posts.map(post => (
             <Col xs="6" key={post.id}>
-              <Row>{post.title}</Row>
-              <Row>{post.contents}</Row>
+              <Row>Title: {post.title}</Row>
+              <Row>Comment: {post.contents}</Row>
             </Col>
           ))}
         </Row>
