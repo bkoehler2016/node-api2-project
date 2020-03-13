@@ -7,6 +7,10 @@ server.use(express.json());
 server.use(cors());
 server.use("/api/posts", postsRouter);
 
+server.get("/", (req, res) => {
+  res.send(`<h2>It's working It's working</h2>`);
+});
+
 const port = 9000;
 server.listen(port, () => {
   console.log(
