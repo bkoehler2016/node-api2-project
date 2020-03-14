@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
+import axios from "axios";
 class Posts extends Component {
   constructor() {
     super();
@@ -9,11 +10,10 @@ class Posts extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:9000/api/posts")
-      .then(res => res.json())
-      .then(posts =>
-        this.setState({ posts }, () => console.log("Posts fetched...", posts))
-      );
+    axios.get("http://localhost:9000/api/posts").then(res => {
+      const posts = res.data;
+      this.setState({ posts });
+    });
   }
 
   render() {
@@ -24,6 +24,7 @@ class Posts extends Component {
             <Col xs="6" key={post.id}>
               <Row>Title: {post.title}</Row>
               <Row>Comment: {post.contents}</Row>
+              <Button color="danger">Delete</Button>
             </Col>
           ))}
         </Row>
