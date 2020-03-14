@@ -13,7 +13,5 @@ server.get("/", (req, res) => {
 
 const port = 9000;
 server.listen(port, () => {
-  console.log(
-    `Server Running on http://localhost:${port} what 9000 that cannot be right`
-  );
+  console.log(`Server Running on http://localhost:${port} it is over 9000`);
 });
