@@ -10,7 +10,7 @@ export default function PostsForm() {
   };
 
   const handleSubmit = () => {
-    axios.post("https://localhost:9000/", newPost).then(res => {
+    axios.post("http://localhost:9000/api/posts/", newPost).then(res => {
       console.log(res);
     });
   };
@@ -33,7 +33,9 @@ export default function PostsForm() {
         placeholder="Contents"
         onChange={handleChange}
       />
-      <Button color="primary" type="submit"></Button>
+      <Button color="primary" type="submit">
+        Add New Post
+      </Button>
     </form>
   );
 }
