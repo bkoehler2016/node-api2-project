@@ -10,7 +10,8 @@ export default function PostsForm() {
   };
 
   const handleSubmit = () => {
-    axios.post("http://localhost:9000/api/posts/", newPost).then(res => {
+    axios.post("http://localhost:9000/api/posts/", newPost)
+    .then(res => {
       console.log(res);
     });
   };

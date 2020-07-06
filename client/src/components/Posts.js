@@ -20,7 +20,7 @@ class Posts extends Component {
     this.setState({ id: event.target.value });
   };
 
-  handleSubmit = event => {
+  handleDelete = event => {
     event.preventDefault();
 
     axios
@@ -28,6 +28,7 @@ class Posts extends Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
+        window.location.reload();
       });
   };
 
@@ -43,7 +44,7 @@ class Posts extends Component {
             </Col>
           ))}
         </Row>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleDelete}>
           <label>
             Post ID:
             <input type="text" name="id" onChange={this.handleChange} />
